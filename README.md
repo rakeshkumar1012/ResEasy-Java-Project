@@ -1,49 +1,92 @@
-ResEasy 🍽️
+# 🍴 ResEasy – Restaurant Reservation System  
 
-A Restaurant Table Reservation System with Auto-Release & Waiting List
+---
 
-📌 Overview
+## 📌 Overview  
+**ResEasy** is a Java-based restaurant reservation system that allows customers to book tables, manage waiting lists, and automatically release reservations after a specified time. It provides an interactive menu-driven interface, ensuring efficient table allocation and revenue tracking for restaurants.  
 
-ResEasy is a Java-based restaurant table reservation system that allows customers to book tables, manage waiting lists, and automatically release reservations after a specified time. The system also tracks daily revenue and provides an interactive menu-driven interface.
+---
 
-🚀 Features
+## 🚀 Features  
 
-Table Management:
+✅ **Table Management** – Supports multiple table sizes (2, 4, 6, 8 seaters).  
+✅ **Smart Allocation** – Customers are assigned to the most suitable table.  
+✅ **Auto-Release** – Reservations expire automatically after set duration.  
+✅ **Waiting List** – Customers are queued and auto-assigned when tables free up.  
+✅ **Revenue Tracking** – Calculates daily revenue from reservations.  
+✅ **OOP Principles** – Encapsulation, Abstraction, Inheritance, Interfaces.  
+✅ **Threading** – Background threads handle reservation expiry.  
 
-Supports multiple table sizes (2, 4, 6, 8 seaters).
+---
 
-Ensures customers are allocated to the most suitable table size.
+## 📖 UML Diagram  
 
-Auto-Release Mechanism:
+```
++--------------------+         1        *  +--------------------+
+|    Restaurant      |-------------------->|       Table        |
++--------------------+                     +--------------------+
+| - tables: List<Table>                    | - tableNumber: int |
+| - waitingList: Queue<Customer>           | - capacity: int    |
+| - totalRevenue: double (static)          | - booked: boolean  |
++--------------------+                     | - customerName: String |
+| + viewTables()                          | - members: int     |
+| + bookTable(Customer, members, ...)     | - reservationTime: int |
+| + cancelBooking(tableNo)                | - chargePerPerson: double |
+| + forceRelease(tableNo)                 | - autoReleaseThread: Thread |
+| + viewWaitingList()                     +--------------------+
+| + viewRevenue()                         | + book(...)        |
+|                                          | + release()        |
+|                                          | + getDetails()     |
++--------------------+                     +--------------------+
+         *
+         |
+         v
++--------------------+         implements
+|     Customer       |--------------------+
++--------------------+                    |
+| - name: String     |                    |
+| - members: int     |                    |
++--------------------+                    |
+| + getName()        |                    |
+| + getMembers()     |                    |
++--------------------+                    |
+                                          v
+                                  +--------------------+
+                                  |   AbstractPerson   | <<abstract>>
+                                  +--------------------+
+                                  | - name: String     |
+                                  | - members: int     |
+                                  +--------------------+
+                                  | + getName()        |
+                                  | + getMembers()     |
+                                  +--------------------+
 
-Reservations expire after the specified time using background threads.
++--------------------+  <<interface>>
+|     Reservable     |
++--------------------+
+| + book(...)        |
+| + release()        |
++--------------------+
+```
 
-Released tables are reallocated to waiting customers automatically.
+---
+## 🛠️ How to Run  
 
-Waiting List:
+1️⃣ Clone or download the project.  
+2️⃣ Open terminal and compile:  
+```sh
+javac RestaurantReservationApp.java
+```  
+3️⃣ Run the program:  
+```sh
+java RestaurantReservationApp
+```  
 
-Customers are queued if suitable tables are not available.
+---
 
-Waiting customers are assigned immediately once a table frees up.
+## 📋 Example Usage  
 
-Revenue Tracking:
-
-Collects charges based on members × charge per person.
-
-Shows total revenue earned for the day.
-
-Encapsulation & OOP Principles:
-
-Private fields with getters/setters.
-
-Uses Abstract classes and Interfaces (Reservable, AbstractPerson).
-
-Composition: Restaurant has-a list of Tables.
-
-Static usage: Daily revenue tracked as a static variable.
-📖 UML Diagram
-
-📋 Example Usage
+```
 --- Restaurant Reservation Menu ---
 1. View table status
 2. Book a table
@@ -52,26 +95,28 @@ Static usage: Daily revenue tracked as a static variable.
 5. View waiting list
 6. View total revenue
 7. Exit
+
 Choose an option: 2
-Enter customer name: Sai
-Enter number of members: 2
-Enter reservation time (minutes): 3
-Enter charge per person: 100
-[INFO] Table 1 booked successfully for Sai.
-👨‍💻 Author
+Enter customer name: Suriii
+Enter number of members: 3
+Enter reservation time (minutes): 2
+Enter charge per person: 120
+[INFO] Table 2 booked successfully for Suriii (Expires in 2 minutes).
+```
 
-Developed as part of Java OOP Concepts Project to demonstrate:
+---
 
-Encapsulation
+## 👨‍💻 Author  
 
-Abstraction
+Developed as part of a **Java OOP Project** demonstrating:  
+- Encapsulation  
+- Abstraction  
+- Inheritance  
+- Polymorphism  
+- Interfaces  
+- Static & Composition  
+- Threads and Concurrency  
 
-Inheritance
+---
 
-Polymorphism
-
-File Handling
-
-Threads & Concurrency
-
-Static & Composition Usage
+✨ **ResEasy – Making Reservations Easy!**  
