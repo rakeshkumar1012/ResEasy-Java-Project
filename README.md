@@ -121,5 +121,7 @@ Developed as part of a **Java OOP Project** demonstrating:
 - Threads and Concurrency  
 
 ---
-
+##  PPT LINK
+https://www.canva.com/design/DAGwUiM40B4/DGwz7Etqj2a3VxqbPB1g3g/edit?utm_content=DAGwUiM40B4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+---
 ✨ **ResEasy – Making Reservations Easy!**  
