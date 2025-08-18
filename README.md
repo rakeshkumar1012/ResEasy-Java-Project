@@ -70,7 +70,8 @@
 
 
 ```
-<img width="728" height="831" alt="Final2 drawio" src="https://github.com/user-attachments/assets/aea816a5-05bc-41f6-afdb-51d879256be8" />
+<img width="728" height="831" alt="Final2 drawio (2)" src="https://github.com/user-attachments/assets/3d6a1a54-83a0-4e24-8cc3-2be43f1fd321" />
+
 ---
 ## 🛠️ How to Run  
 
