@@ -67,6 +67,8 @@
 | + book(...)        |
 | + release()        |
 +--------------------+
+<img width="728" height="831" alt="Final2 drawio" src="https://github.com/user-attachments/assets/aea816a5-05bc-41f6-afdb-51d879256be8" />
+
 ```
 
 ---
